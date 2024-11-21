@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms and Conditions / शर्तें और नियम</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8e0;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            color: #4CAF50;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .back-button {
+            margin-top: 20px;
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .back-button:hover {
+            background-color: #45a049;
+        }
+
+        .language-selector {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .language-selector button {
+            padding: 10px 15px;
+            margin: 0 5px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+
+        .language-selector button:hover {
+            background-color: #45a049;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Terms and Conditions / शर्तें और नियम</h1>
+    <button> <li><a href="KNOWLEDGECENETR.html">Knowledge Center</a></li></button>
+
+    <div class="language-selector">
+        <button onclick="showEnglish()">English</button>
+        <button onclick="showHindi()">हिन्दी</button>
+    </div>
+
+    <div id="english" class="section">
+        <h2>Introduction</h2>
+        <p>Welcome to Farmbook! These Terms and Conditions outline the rules and regulations for the use of our website.</p>
+
+        <h2>Use of the Website</h2>
+        <p>By accessing this website, you agree to comply with these terms and conditions. If you do not agree, please do not use our services.</p>
+
+        <h2>User Responsibilities</h2>
+        <p>Farmers are responsible for maintaining the confidentiality of their account information and are fully responsible for all activities that occur under their account.</p>
+
+        <h2>Privacy Policy</h2>
+        <p>We are committed to protecting your privacy. Your personal information will only be used in accordance with our Privacy Policy.</p>
+
+        <h2>Liability</h2>
+        <p>Farmbook shall not be liable for any direct, indirect, incidental, or consequential damages arising from your use of this website.</p>
+
+        <h2>Changes to Terms</h2>
+        <p>Farmbook reserves the right to amend these Terms and Conditions at any time. Please check this page periodically for updates.</p>
+
+        <h2>Contact Us</h2>
+        <p>If you have any questions about these Terms, please contact us.</p>
+    </div>
+
+    <div id="hindi" class="section hidden">
+        <h2>परिचय</h2>
+        <p>Farmbook में आपका स्वागत है! ये शर्तें और नियम हमारी वेबसाइट के उपयोग के लिए नियम और विनियमों को स्पष्ट करते हैं।</p>
+
+        <h2>वेबसाइट का उपयोग</h2>
+        <p>इस वेबसाइट तक पहुँचकर, आप इन शर्तों और नियमों का पालन करने के लिए सहमत हैं। यदि आप सहमत नहीं हैं, तो कृपया हमारी सेवाओं का उपयोग न करें।</p>
+
+        <h2>उपयोगकर्ता की जिम्मेदारियाँ</h2>
+        <p>किसान अपने खाते की जानकारी की गोपनीयता बनाए रखने के लिए जिम्मेदार हैं और उनके खाते के अंतर्गत होने वाली सभी गतिविधियों के लिए पूर्ण रूप से जिम्मेदार हैं।</p>
+
+        <h2>गोपनीयता नीति</h2>
+        <p>हम आपकी गोपनीयता की रक्षा के लिए प्रतिबद्ध हैं। आपकी व्यक्तिगत जानकारी केवल हमारी गोपनीयता नीति के अनुसार उपयोग की जाएगी।</p>
+
+        <h2>जिम्मेदारी</h2>
+        <p>Farmbook आपकी इस वेबसाइट के उपयोग से उत्पन्न होने वाले किसी भी प्रत्यक्ष, अप्रत्यक्ष, आकस्मिक, या परिणामस्वरूप नुकसान के लिए जिम्मेदार नहीं होगा।</p>
+
+        <h2>शर्तों में परिवर्तन</h2>
+        <p>Farmbook को कभी भी इन शर्तों और नियमों में संशोधन करने का अधिकार है। कृपया अद्यतन के लिए इस पृष्ठ को समय-समय पर देखें।</p>
+
+        <h2>हमसे संपर्क करें</h2>
+        <p>यदि आपको इन शर्तों के बारे में कोई प्रश्न है, तो कृपया हमसे संपर्क करें।</p>
+    </div>
+
+    <a class="back-button" href="homepage.html">Back to Homepage / होमपेज पर वापस जाएँ</a>
+</div>
+
+<script>
+    function showEnglish() {
+        document.getElementById('english').classList.remove('hidden');
+        document.getElementById('hindi').classList.add('hidden');
+    }
+
+    function showHindi() {
+        document.getElementById('hindi').classList.remove('hidden');
+        document.getElementById('english').classList.add('hidden');
+    }
+
+    // Default to English on page load
+    showEnglish();
+</script>
+
+</body>
+</html>

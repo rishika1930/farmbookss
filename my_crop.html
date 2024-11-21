@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Details</title>
+    <style>
+        /* General body styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url(crop.jpeg.jpg);
+            background-size: cover; /* Ensures the image covers the entire area */
+    background-repeat: no-repeat; /* Prevents tiling */
+    background-position: center; /* Centers the image */
+        }
+
+        /* Crop container styling */
+        .crop-container {
+            background-color: white;
+            width: 400px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .crop-container h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .crop-details {
+            padding: 10px;
+            color: #555;
+            font-size: 16px;
+            line-height: 1.6;
+            text-align: left;
+        }
+
+        .crop-details span {
+            font-weight: bold;
+            color: #333;
+        }
+        .crop-image {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            margin: 15px auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        
+
+
+        .back-button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            text-align: center;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .back-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="crop-container">
+        <h1>Crop Details</h1>
+        <img id="cropImage" class="crop-image" src="wheat.jpg" alt="Crop Image">
+        <div class="crop-details" id="cropDetails">
+            <p>Loading crop details...</p>
+        </div>
+        <a href="my_profile.html" class="back-button">Go Back</a>
+    </div>
+
+    <script>
+        // Replace with your Google Apps Script Web App URL
+        const apiUrl = "https://script.google.com/macros/s/AKfycbz9P8e6GapNFIf0WyZpQNBfKa5u5g1XXeWKp6VIAgB8dYSW-EdFoyZeoWNY5n2OylSX/exec";
+
+        fetch(apiUrl)
+            .then(response => response.json())
+            .then(data => {
+                // Check if the crop image URL exists
+                if (data.cropImage) {
+                    document.getElementById("cropImage").src = data.cropImage;
+                } else {
+                    document.getElementById("cropImage").alt = "No Image Available";
+                }
+                const cropDetails = `
+                    <p><span>Crop Name:</span> ${data.cropName}</p>
+                    <p><span>Crop Type:</span> ${data.cropType}</p>
+                    <p><span>Quantity:</span> ${data.quantity}</p>
+                    <p><span>Price:</span> ₹${data.price}</p>
+                    <p><span>Description:</span> ${data.description}</p>
+                    <a href="index.html" class="view-crop-button">Home</a><br>
+                    <a href="crop_rates.html" class="view-crop-button">Crop Rates</a>
+                `;
+
+                document.getElementById("cropDetails").innerHTML = cropDetails;
+            })
+            .catch(error => {
+                document.getElementById("cropDetails").innerHTML = "<p>Failed to load crop details. Please try again later.</p>";
+                console.error("Error fetching data:", error);
+            });
+    </script>
+</body>
+</html>

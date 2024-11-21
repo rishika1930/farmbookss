@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Farmbook - Welcome</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      height: 100vh;
+      background: linear-gradient(to right, #f4f4f9, #e0ffe0);
+      background-image: url(home2.jpeg);
+    }
+    .container {
+      display: flex;
+      width: 100%;
+    }
+
+    .left {
+  flex: 1;
+  background-color: #81cb83;
+  color:black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  overflow: hidden;
+  font-family: 'Georgia', serif; /* Change the font here */
+}
+
+    .left h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      opacity: 0;
+      transform: translateY(50px);
+      animation: slideUp 1s forwards ease-in-out;
+    }
+    .left p {
+      font-size: 1.2rem;
+      line-height: 1.5;
+      text-align: center;
+      max-width: 80%;
+      opacity: 0;
+      transform: translateY(50px);
+      animation: slideUp 1s forwards ease-in-out;
+      animation-delay: 0.5s;
+    }
+    /* .right {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    } */
+    .right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-image: url(wheats.webp); /* Add your image path here */
+    background-size: cover; /* Ensures the image covers the entire area */
+    background-repeat: no-repeat; /* Prevents tiling */
+    background-position: center; /* Centers the image */
+    color: black; /* Optional: adjust text color for better contrast */
+  }
+    .right h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+    .right .btn-group {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .btn-group a {
+      text-decoration: none;
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 1.1rem;
+      color: white;
+      background-color: #4CAF50;
+      border-radius: 5px;
+      text-align: center;
+      width: 200px;
+    }
+    .btn-group a:hover {
+      background-color: #45a049;
+    }
+
+    /* Keyframes for sliding effect */
+    @keyframes slideUp {
+      0% {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <!-- Left Side -->
+  <div class="left">
+    <h1>Farmbook</h1>
+    <p>
+      Welcome to Farmbook, your digital hub for connecting with fellow farmers. 
+      Share resources, exchange knowledge, and collaborate to achieve better yields 
+      and success in agriculture. Join us to revolutionize farming together!
+    </p>
+  </div>
+
+  <!-- Right Side -->
+  <div class="right">
+    <h2>Get Started</h2>
+    <div class="btn-group">
+      <!-- <a href="register.html">Register</a> -->
+      <a href="login.html">Login</a>
+      <a href="signup.html">Sign Up</a>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,205 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmbook - Login</title>
+    <style>
+        /* General body styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f9f9f9;
+            background-image: url(crop.jpeg.jpg);
+            background-size: cover; /* Ensures the image covers the entire area */
+    background-repeat: no-repeat; /* Prevents tiling */
+    background-position: center;
+        }
+
+        /* Login container styling */
+        .login-container {
+            background-color: white;
+            width: 400px;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        /* Header styles */
+        .login-container h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .login-container p {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        /* Google button styling */
+        .google-login {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 20px;
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            color: #555;
+            cursor: pointer;
+            font-weight: bold;
+            margin-bottom: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .google-login:hover {
+            background-color: #f0f0f0;
+        }
+
+        .google-login img {
+            width: 20px;
+            margin-right: 10px;
+        }
+
+        /* Divider */
+        .divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background-color: #ddd;
+        }
+
+        .divider span {
+            margin: 0 10px;
+            color: #999;
+            font-size: 12px;
+        }
+
+        /* Input fields styling */
+        .login-container input[type="text"],
+        .login-container input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+
+        /* Continue button styling */
+        .continue-btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+        }
+
+        .continue-btn:hover {
+            background-color: #0056b3;
+            
+        }
+
+        /* Signup link styling */
+        .signup-link {
+            margin-top: 15px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .signup-link a {
+            color: #4CAF50;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .signup-link a:hover {
+            text-decoration: underline;
+        }
+
+        /* Use phone link styling */
+        .use-phone {
+            font-size: 12px;
+            color: #4CAF50;
+            cursor: pointer;
+            margin-left: 5px;
+        }
+        .continue-btn a{
+            text-decoration: none;
+        }
+    </style>
+
+    
+</head>
+<body>
+    <div class="login-container">
+        <h2>Sign in to Farmbook</h2>
+        <p>Welcome back! Please sign in to continue</p>
+
+        <!-- Google Login Button -->
+        <div class="google-login">
+            <img src="google.webp" alt="Google Icon">
+            Continue with Google
+        </div>
+
+        <!-- Divider -->
+        <div class="divider">
+            <span>or</span>
+        </div>
+
+        <!-- Input Fields -->
+        <input type="text" placeholder="Email address or username" required>
+        <span class="use-phone">Use phone</span>
+        <input type="password" placeholder="Password" required>
+
+        <!-- Continue Button -->
+        <button class="continue-btn" id="loginButton" > <a href="my_profile.html">Continue</button>
+
+        <!-- Signup Link -->
+        <p class="signup-link">
+             <a href="signup.html">Don’t have an account?<br>Sign up</a>
+        </p>
+    </div>
+   
+    <script>
+        document.getElementById("loginButton").addEventListener("click", function () {
+            // Collect user input
+            const name = document.getElementById("name").value;
+            const password = document.getElementById("password").value;
+
+            // Example validation (you can replace this with API validation)
+            if (name === "testuser" && password === "password123") {
+                // Redirect to profile page
+                window.location.href = "my_profile.html"; // Replace with your actual profile page
+            } else {
+                alert("Invalid username or password. Please try again.");
+            }
+        });
+    </script>
+</body>
+</html>

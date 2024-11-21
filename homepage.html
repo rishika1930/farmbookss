@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmbook - Agriculture, Food Tech, and Rural Development</title>
+    <style>
+        /* General styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            
+        }
+
+        /* Header */ 
+        header {
+            background-color: #2d572c;
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            
+
+        }
+
+        header .logo h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #ff9800;
+        }
+
+        /* Language Selector */
+        .language-selector {
+            background-color: white;
+            color: black;
+            border: 1px solid #2d572c;
+            padding: 5px;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-image: url(crop.jpeg.jpg);
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 120px 20px;
+            position: relative;
+        }
+
+        .hero:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content h2 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-content p {
+            font-size: 20px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-content button {
+            background-color: #ff9800;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .hero-content button:hover {
+            background-color: #e68a00;
+        }
+
+        /* Main Sections */
+        main {
+            padding: 50px 20px;
+            background-color: #fff;
+        }
+
+        .feature-section {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature {
+            background-color: #ffffff;
+            padding: 30px;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+            position: relative;
+            transition: transform 0.3s;
+        }
+
+        .feature:hover {
+            transform: scale(1.05);
+        }
+
+        .feature h3 {
+            font-size: 24px;
+            color: #2d572c;
+            margin-bottom: 15px;
+        }
+
+        .feature p {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .feature img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2d572c;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        #exploreBtn a{
+            text-decoration: none;
+            text-emphasis-color: green;
+
+        }
+        
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <h1>Farmbook</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="homepage.html">Home</a></li>
+                <li><a href="crop_rates.html">Crop Rates</a></li>
+               <li><a href="terms_conditions.html">Terms and Conditions</a></li> 
+                <li><a href="other_farmer.html">Connect with Others</a></li>
+                <!-- <li><a href="signup.html">Sign up</a></li>
+                  <li><a href="login.html">Login</a></li>  -->
+                  <li><a href="my_profile.html">My Profile</a></li> 
+                 <li><a href="crop_detail.html">Enter Crop</a></li>
+                 <li><a href="logisticsregistration.html">Logistics registration</a></li>  
+            </ul>
+        </nav>
+        <!-- Language Selector -->
+       
+        <select id="languageSelector" class="language-selector">
+            <option value="en">English</option>
+            <option value="hi">Hindi</option>
+        </select>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2 id="heroTitle">Empowering Agriculture with Technology</h2>
+            <p id="heroDescription">Connect with rural communities, discover the latest in food technology, and grow your farming business.</p>
+            <button id="exploreBtn"> <a href="explore.html">Explore Now</a></button>
+        </div>
+    </section>
+
+    <!-- Main Sections -->
+    <!-- <main>
+        <section class="feature-section">
+            <div class="feature">
+                <img src="marketplace.png" alt="Marketplace">
+                <h3 id="feature1Title">Marketplace</h3>
+                <p id="feature1Desc">Buy and sell farm products and services.</p>
+            </div>
+            <div class="feature">
+                <img src="KNOWLEDGECENETR.jpg" alt="Knowledge Center">
+                <h3 id="feature2Title">Knowledge Center</h3>
+                <p id="feature2Desc">Access expert advice, farming tips, and food tech innovations.</p>
+            </div>
+            
+        </section> -->
+        <!-- Main Sections -->
+<main>
+    <section class="feature-section">
+        <div class="feature">
+            <img src="croprate.avif" alt="Crop Rates"> <!-- Replace with the appropriate image for Crop Rates -->
+            <h3 id="feature1Title">Crop Rates</h3>
+            <p id="feature1Desc">Stay updated with the latest crop rates in your area. Access real-time information on market prices for various crops.</p>
+            <a href="crop_rates.html"><button>View Crop Rates</button></a>
+        </div>
+        <div class="feature">
+            <img src="KNOWLEDGECENETR.jpg" alt="Knowledge Center">
+            <h3 id="feature2Title"> Knowledge Center</h3>
+            <p id="feature2Desc">Access expert advice, farming tips, and food tech innovations to help you improve your agricultural practices.</p>
+            <a href="KNOWLEDGECENETR.html"><button>Knowledge Center</button></a>
+        </div>
+    </section>
+</main>
+    </main>
+
+  
+    <footer>
+        <p>&copy; 2024 Farmbook. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const translations = {
+            en: {
+                heroTitle: "Empowering Agriculture with Technology",
+                heroDescription: "Connect with rural communities, discover the latest in food technology, and grow your farming business.",
+                feature1Title: "Crop Rates",
+                feature1Desc: "Stay updated with the latest crop rates in your area. Access real-time information on market prices for various crops.",
+                feature2Title: "Knowledge Center",
+                feature2Desc: "Access expert advice, farming tips, and food tech innovations.",
+                
+            },
+            hi: {
+                heroTitle: "कृषि को प्रौद्योगिकी के साथ सशक्त बनाना",
+                heroDescription: "ग्रामीण समुदायों से जुड़ें, नवीनतम खाद्य तकनीक को जानें, और अपने खेती के व्यवसाय को बढ़ाएं।",
+                feature1Title: "फसल दरें",
+                feature1Desc: "अपने क्षेत्र में नवीनतम फसल दरों से अपडेट रहें। विभिन्न फसलों के बाजार मूल्यों पर वास्तविक समय की जानकारी प्राप्त करें।",
+                feature2Title: "ज्ञान केंद्र",
+                feature2Desc: "विशेषज्ञ सलाह, खेती के टिप्स, और खाद्य तकनीक नवाचारों तक पहुंचें।"
+                 } };
+                
+                
+                    // Function to update language
+    function updateLanguage(lang) {
+        document.getElementById("heroTitle").innerText = translations[lang].heroTitle;
+        document.getElementById("heroDescription").innerText = translations[lang].heroDescription;
+        document.getElementById("feature1Title").innerText = translations[lang].feature1Title;
+        document.getElementById("feature1Desc").innerText = translations[lang].feature1Desc;
+        document.getElementById("feature2Title").innerText = translations[lang].feature2Title;
+        document.getElementById("feature2Desc").innerText = translations[lang].feature2Desc;
+        // document.getElementById("feature3Title").innerText = translations[lang].feature3Title;
+        // document.getElementById("feature3Desc").innerText = translations[lang].feature3Desc;
+        // document.getElementById("feature4Title").innerText = translations[lang].feature4Title;
+        // document.getElementById("feature4Desc").innerText = translations[lang].feature4Desc;
+    }
+
+    // Add event listener to language selector
+    document.getElementById("languageSelector").addEventListener("change", function() {
+        const selectedLanguage = this.value;
+        updateLanguage(selectedLanguage);
+    });
+
+    // Default to English on page load
+    updateLanguage("en");
+
+    // function checkLoginStatus() {
+    //   const isLoggedIn = localStorage.getItem('isLoggedIn');
+    //   if (!isLoggedIn) {
+    //     window.location.href = 'KNOWLEDGECENTER.html';  // Redirect if not logged in
+    //   }
+    // }
+
+    // // Call this function on page load
+    // checkLoginStatus();
+</script>
+</body>
+ </html>

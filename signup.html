@@ -1,0 +1,244 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmbook - Signup</title>
+    <style>
+        /* Style the header */
+        header {
+            
+            background-size: cover;
+            background-position: center;
+            color: black;
+            text-align: center;
+            padding: 50px 10px;
+            position: relative;
+        }
+        
+
+        /* Apply some basic styles to the body */
+        body {
+            background-image: url(crop.jpeg.jpg);
+            background-size: cover; /* Ensures the image covers the entire area */
+    background-repeat: no-repeat; /* Prevents tiling */
+    background-position: center;
+            
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #f9f9f9;
+        }
+
+        /* Style the section where the form is located */
+        section {
+            flex: 1;
+            padding: 20px;
+            max-width: 600px;
+            margin: auto;
+        }
+
+        /* Style the form elements */
+        form {
+            display: flex;
+            flex-direction: column;
+            background-color: rgb(215, 243, 215);
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 400px;
+            /* Style the form elements */
+
+    display: flex;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparent white background */
+    backdrop-filter: blur(10px); /* Blur effect */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    padding: 20px;
+    width: 400px;
+    border: 1px solid rgba(255, 255, 255, 0.5); /* Light border for glass effect */
+
+        }
+
+        /* Style form labels */
+        label {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        /* Style text inputs and file input */
+        input[type="text"],
+        input[type="tel"],
+        input[type="email"],
+        input[type="address"],
+        input[type="password"] {
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        /* Add margin between form fields */
+        input[type="text"],
+        input[type="tel"],
+        input[type="email"],
+        input[type="address"],
+        input[type="password"] {
+            margin-bottom: 15px;
+        }
+
+        /* Style the submit button */
+        button[type="submit"] {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+
+        /* Change button color on hover */
+        button[type="submit"]:hover {
+            background-color: #a4f8a9;
+        }
+
+        /* Style the footer */
+        footer {
+            background-color: #99f39e;
+            padding: 20px 10px;
+            text-align: center;
+            position: relative;
+            
+        }
+
+        /* Style the "Go Back" button */
+        footer a {
+            padding: 10px 15px;
+            background-color: #f44336;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            text-decoration: none;
+        }
+
+        /* Change "Go Back" button color on hover */
+        footer a:hover {
+            background-color: #e53935;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="glass-container">Farmbook - Sign up</h1>
+    </header>
+
+    <section>
+        <form id="farmerForm" method="post">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" placeholder="Full Name" required>
+
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" placeholder="Phone" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Email" required>
+
+            <label for="aadhar">Aadhar Number:</label>
+            <input type="text" id="aadhar" name="aadhar" placeholder="Aadhar Number" required>
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" placeholder="Address" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Password" required>
+
+            <button type="submit" name="btn">Submit</button>
+        </form>
+    </section>
+
+    <footer>
+        <!-- <a href="my_profile.html">Go To your Profile</a> -->
+        <a href="homepage.html">Home</a>
+    </footer>
+
+    <script>
+        document.getElementById("farmerForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            // Input values
+            const name = document.querySelector('[name="name"]').value.trim();
+            const phone = document.querySelector('[name="phone"]').value.trim();
+            const email = document.querySelector('[name="email"]').value.trim();
+            const aadhar = document.querySelector('[name="aadhar"]').value.trim();
+            const locality = document.querySelector('[name="address"]').value.trim();
+            const password = document.querySelector('[name="password"]').value.trim();
+
+            // Validations
+            if (name === "") {
+                alert("Name is required.");
+                return;
+            }
+
+            if (!/^\d{10}$/.test(phone)) {
+                alert("Phone number must be exactly 10 digits.");
+                return;
+            }
+
+            if (!/^\d{12}$/.test(aadhar)) {
+                alert("Aadhar number must be exactly 12 digits.");
+                return;
+            }
+
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                alert("Invalid email address.");
+                return;
+            }
+
+            
+
+            if (address === "") {
+                alert("Address is required.");
+                return;
+            }
+            if (password.length < 6) {
+                alert("Password must be at least 6 characters.");
+                return;
+            }
+
+            const farmerData = { name, phone, email, aadhar, address, password };
+
+            console.log("Submitting data:", farmerData); // Debugging line
+
+            fetch("https://script.google.com/macros/s/AKfycbwOQIUjEzKoTizX9v5r3Tcv8kd7mVLc65R8c1ej8HNz1CnG1cjU8DCnmME0XN4r_cI/exec", {
+                method: "POST",
+                body: JSON.stringify(farmerData),
+                mode: "no-cors",
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            })
+            .then(response => response.text())
+            .then(data => {
+                console.log("Server response:", data); // Debugging line
+                alert("Farmer details saved successfully!");
+            })
+            .catch(error => {
+                console.error("Error:", error);  // Log any error
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
+

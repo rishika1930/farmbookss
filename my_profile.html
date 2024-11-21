@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmer Profile</title>
+    <style>
+        body {
+            
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            background-image: url(crop.jpeg.jpg);
+            background-size: cover; /* Ensures the image covers the entire area */
+    background-repeat: no-repeat; /* Prevents tiling */
+    background-position: center; /* Centers the image */
+            
+        }
+
+        .profile-container {
+           
+            max-width: 600px;
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center; 
+        }
+
+        .profile-container h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .profile-picture {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .profile-picture img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 2px solid #4CAF50;
+        }
+
+        .profile-details {
+            padding: 10px;
+            color: #555;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .profile-details span {
+            font-weight: bold;
+            color: #333;
+        }
+        .navigation {
+            margin-top: 20px;
+        }
+
+        .view-crop-button, .back-button {
+            display: inline-block;
+            width: 100%;
+            padding: 10px;
+            text-align: center;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 10px 0; /* Space between buttons */
+        }
+
+        .view-crop-button:hover, .back-button:hover {
+            background-color: #45a049;
+        
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-container">
+        <h1>Farmer Profile</h1>
+        <div class="profile-picture">
+            <img src="woman.avif" alt="Profile Picture">
+        </div>
+        <div class="profile-details" id="profileDetails">
+            <p>Loading farmer details...</p>
+        </div>
+        <!-- <a href="my_crop.html" class="view-crop-button">View Crop Details</a> <br>
+                   <a href="other_farmer.html" class="view-crop-button">Connect with  others</a><br>
+                    <a href="index.html" class="view-crop-button">Home</a> 
+        <a href="index.html" class="back-button">Go Back</a> -->
+        <div class="navigation">
+            <a href="my_crop.html" class="view-crop-button">View Crop Details</a>
+            <a href="other_farmer.html" class="view-crop-button">Connect with Others</a>
+            <a href="homepage.html" class="back-button">Go Back</a>
+        </div>
+    </div>
+    
+
+    <script>
+        // Replace with your Google Apps Script Web App URL
+        const apiUrl = "https://script.google.com/macros/s/AKfycbyOw16oPha3XYXNclSNlcsrrtXADemLYBCW4Ie6XMr8ByP4U9s-m_nEAHshufzBYIy6/exec";
+
+        fetch(apiUrl)
+            .then(response => response.json())
+            .then(data => {
+                const profileDetails = `
+                    <p><span>Name:</span> ${data.name}</p>
+                    <p><span>Phone:</span> ${data.phone}</p>
+                    <p><span>Email:</span> ${data.email}</p>
+                   
+                    <p><span>Aadhar Number:</span> ${data.aadhar}</p>
+                     <p><span>Address:</span> ${data.address}</p>
+                   
+                    
+                `;
+
+                document.getElementById("profileDetails").innerHTML = profileDetails;
+            })
+            .catch(error => {
+                document.getElementById("profileDetails").innerHTML = "<p>Failed to load profile details. Please try again later.</p>";
+                console.error("Error fetching data:", error);
+            });
+    </script>
+</body>
+</html>
